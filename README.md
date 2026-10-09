@@ -47,7 +47,7 @@ The Android app requests no network permission and makes no network requests. It
 - Natural, cool blue, and warm amber star palettes.
 - Sparse, balanced, dense, and packed star counts.
 - Slow, natural, and fast drift speeds.
-- Dim, standard, and bright display levels.
+- Dim, standard, and bright star luminance settings.
 - Optional occasional or frequent meteor trails.
 - Per-setting random selection and optional randomization of all settings at each start.
 - Remote-friendly settings and a validated settings provider for host applications.
@@ -59,7 +59,7 @@ The Android app requests no network permission and makes no network requests. It
 - ADB for installation from a computer.
 - Android SDK platform 36 and build-tools 36.0.0 for local builds.
 
-Fire TV behavior has been checked on AFTDEC012E with Fire OS 11/API 30. Android TV behavior has been checked in an emulator. A physical Google TV device was not available; see [device verification](docs/VERIFICATION.md).
+Android TV emulator behavior has been checked at 1920x1080. Physical Fire TV and Google TV devices were not tested for this release. See [device verification](docs/VERIFICATION.md) for the test limits.
 
 ## Installation
 
