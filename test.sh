@@ -8,4 +8,6 @@ javac -source 8 -target 8 -d "$OUT" \
   "$ROOT/src/com/jeremykenedy/starfielddrift/SettingsValues.java" \
   "$ROOT/tests/StarfieldOptionsTest.java"
 java -ea -cp "$OUT" com.jeremykenedy.starfielddrift.StarfieldOptionsTest
+javac -source 8 -target 8 -cp "$OUT" -d "$OUT" "$ROOT/tests/ClockVisibilitySettingsTest.java"
+java -ea -cp "$OUT" com.jeremykenedy.starfielddrift.ClockVisibilitySettingsTest
 python3 -m unittest -v tests.test_installer

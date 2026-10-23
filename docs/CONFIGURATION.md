@@ -25,3 +25,7 @@ The settings provider authority is `com.jeremykenedy.starfielddrift.settings`:
 Update one supported choice through `ContentResolver.update()` on the `settings` URI with `ContentValues` named `key` and `value`. Unsupported keys and values throw `IllegalArgumentException`. Boolean values are the strings `true` or `false`. Query the schema rather than assuming new options exist.
 
 The provider exposes visual preferences only. It does not expose device or account data and it does not make network requests.
+
+## Optional clock
+
+`show_clock` is an explicit boolean with default `false`, choices `true|false`, and `randomAllowed=false`. It enables a gently moving local-time overlay. Scene randomization preserves the chosen clock visibility.

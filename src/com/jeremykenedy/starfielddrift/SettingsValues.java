@@ -10,6 +10,7 @@ public final class SettingsValues {
         if ("palette".equals(key)) return oneOf(value, "natural", "blue", "amber", "random");
         if ("brightness".equals(key)) return oneOf(value, "dim", "standard", "bright", "random");
         if ("meteors".equals(key)) return oneOf(value, "off", "occasional", "frequent", "random");
+        if ("show_clock".equals(key)) return oneOf(value, "true", "false");
         if ("randomize_all".equals(key)) return oneOf(value, "true", "false");
         return false;
     }
