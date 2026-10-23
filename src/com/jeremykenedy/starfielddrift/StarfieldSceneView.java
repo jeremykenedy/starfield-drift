@@ -24,9 +24,13 @@ final class StarfieldSceneView extends View {
     private LinearGradient background;
     private long startedAt;
     private boolean running;
+    private final boolean showClock;
+    private final ClockOverlay clock;
 
     StarfieldSceneView(Context context) {
         super(context);
+        clock = new ClockOverlay(context);
+        showClock = PreferenceManager.getDefaultSharedPreferences(context).getBoolean("show_clock", false);
         setLayerType(View.LAYER_TYPE_HARDWARE, null);
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
         options = StarfieldOptions.resolve(preferences.getString("density", "balanced"),
@@ -66,6 +70,7 @@ final class StarfieldSceneView extends View {
         drawBackground(canvas);
         drawStars(canvas, time);
         drawMeteors(canvas, time);
+        if (showClock) clock.draw(canvas, getWidth(), getHeight(), time);
         if (running) postDelayed(invalidator, 41L);
     }
 

@@ -6,5 +6,6 @@ public final class CoverageTest {
     @Test
     public void validatesSettingResolutionAndProviderValues() {
         StarfieldOptionsTest.main(new String[0]);
+        ClockVisibilitySettingsTest.main(new String[0]);
     }
 }

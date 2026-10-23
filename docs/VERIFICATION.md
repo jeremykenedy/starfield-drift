@@ -11,3 +11,9 @@ Device checks distinguish app rendering from the vendor's screensaver manager. A
 The [Starfield Drift preview](screenshots/starfield-preview.png) and [settings screen](screenshots/settings-android-tv.png) were captured from the running app on the Android TV emulator. The screensaver's in-app animation preview uses the same renderer. The built APK declares the `android.service.dreams.DreamService` action and dream metadata, and the provider schema was queried and updated; this does not establish support in vendor screensaver menus.
 
 The Android TV emulator exposes a 1920x1080 surface. Native 4K output has not been measured. Frame pacing, CPU/GPU use, memory, power draw, and sustained temperature have not been measured on a physical television. Do not infer device performance from the emulator.
+
+## Optional clock regression, 2026-10-22
+
+An isolated Android TV emulator fixture compiled the production scene and provider classes from this change. The combined five-app run passed 123 actual Canvas/provider assertions. It checked the existing appearance default (OFF), explicit ON/OFF under scene randomization, portable boolean storage and schema, and invalid-write retention. OFF produced zero time/date/seconds text draws while the scene remained drawn.
+
+This isolated regression does not establish production DreamService binding, physical-TV performance or acceptance of the existing artwork. Signed release and both-TV installation gates remain pending.
